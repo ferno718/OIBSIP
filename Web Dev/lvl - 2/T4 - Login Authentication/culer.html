@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Login Authentication</title>
+        <link rel="stylesheet" href="culer-styles.css">
+    </head>
+    <body>
+        <section id="header">
+            <a href="index.html"><img src="img/barcapng.png" class="logo"></a>
+            <div class="cont">
+                <ul id="navbar">
+                    <li><a class="d1" href="culer.html">Register</a></li>
+                    <li><a href="login.html">Login</a></li>                
+                </ul>
+            </div>
+        </section>
+        <section class="registration-container">
+            <br><h1 class="registration-heading">Become a Culer today!</h1><br><hr>
+            <p class="registration-description">Fill out the registration form below:</p><hr><br>
+            <p id="err" style="color: red;"></p>
+            <form action="Back" onsubmit="validate()">
+                <label for="name">First Name:</label>
+                <input type="text" id="fname" name="name" required>
+                <label for="cont">Contact number:</label>
+                <input type="text" id="fcont" name="cont" required>
+                <label for="email">Email:</label>
+                <input type="email" id="fmail" name="mail" required>
+                <label for="password">Password:</label>
+                <input type="password" id="fpass" name="pass" required>
+                <label for="password">Confirm Password:</label>
+                <input type="password" id="cpass" name="cpass" required><br>
+                <br><button type="submit" class="registration-button" name="register">Register</button>
+            </form><br>
+        </section><br><br>
+        <script>
+            function validate() {
+                let vname = document.getElementById("fname").value;
+                let vcont = document.getElementById("fcont").value;
+                let vmail = document.getElementById("fmail").value;
+                let vpass = document.getElementById("fpass").value;
+                let vcpass = document.getElementById("cpass").value;
+
+                let pcont = /^(0|91)?[6-9][0-9]{9}$/;
+                let pmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+                if (!vmail.match(pmail)) {
+                    document.getElementById("err").innerHTML = "Invalid email format.";
+                    return false;
+                } else if (!vcont.match(pcont)) {
+                    document.getElementById("err").innerHTML = "Invalid phone number format.";
+                    return false;
+                } else if (!vname || !vcont || !vmail || !vpass || !vcpass) {
+                    document.getElementById("err").innerHTML = "Enter all details.";
+                    return false;
+                } else if (vpass !== vcpass) {
+                    document.getElementById("err").innerHTML = "Passwords do not match.";
+                    return false;
+                }
+                return true;
+            }
+        </script>
+    </body>
+</html>

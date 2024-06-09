@@ -1,0 +1,130 @@
+* {
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    animation: fadeIn ease 1s;
+}
+body {
+    background-color: black;
+    background-image: url(img/barcabg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#visca {
+    font-style: italic;
+}
+.logo {
+    margin-left: -50px;
+    margin-bottom: -4px;
+    height: 77px;
+    width: 77px;
+}
+#header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 70px;
+    margin-bottom: 7px;
+    background-color: #A50044;
+    box-shadow: 0 5px 15px rgba(142, 3, 3, 0.5);
+    border-radius: 5px;
+    z-index: 999;
+    position: sticky;
+    top: 0;
+    left: 0;
+}
+#navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#navbar li {
+    list-style: none;
+    padding: 0 10px;
+    position: relative;
+}
+#navbar li a {
+    text-decoration: none;
+    font-size: 18px;
+    color: #EDBB00;
+    transition: 0.3s ease;
+}
+#navbar li a:hover,
+#navbar li a.d1 {
+    color: #FFED02;
+}
+#navbar li a.d1::after,
+#navbar li a:hover::after {
+    content: "";
+    width: 40%;
+    height: 2px;
+    background-color: #EDBB00;
+    position: absolute;
+    left: 12px;
+    bottom: -4px;
+}
+
+.registration-container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    margin-top: 50px;
+    
+}
+
+.registration-heading {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #EDBB00;
+}
+.registration-description {
+    font-size: 18px;
+    color: #A50044;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #004D98;
+}
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 14px;
+}
+
+.registration-button {
+    background-color: #A50044;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: background-color 0.3s;
+}
+.registration-button:hover {
+    background-color: #EDBB00;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

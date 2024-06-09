@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="calculator">
+        <input type="text" class="display" disabled>
+        <div class="buttons">
+            <button class="grey" onclick="appendToDisplay('(')">(</button>
+            <button class="grey" onclick="appendToDisplay(')')">)</button>
+            <button class="red" onclick="deleteLastEntry()">DEL</button>
+            <button class="red" onclick="clearDisplay()">C</button>
+            
+            <button onclick="appendToDisplay('7')">7</button>
+            <button onclick="appendToDisplay('8')">8</button>
+            <button onclick="appendToDisplay('9')">9</button>
+            <button class="green" onclick="appendToDisplay('Math.sqrt(')">√</button>
+            
+            <button onclick="appendToDisplay('4')">4</button>
+            <button onclick="appendToDisplay('5')">5</button>
+            <button onclick="appendToDisplay('6')">6</button>
+            <button class="green" onclick="appendToDisplay('/')">/</button>
+            
+            <button onclick="appendToDisplay('1')">1</button>
+            <button onclick="appendToDisplay('2')">2</button>
+            <button onclick="appendToDisplay('3')">3</button>
+            <button class="green" onclick="appendToDisplay('*')">*</button>
+            
+            <button onclick="appendToDisplay('0')">0</button>
+            <button class="purple" onclick="appendToDisplay('.')">.</button>
+            <button class="green" onclick="appendToDisplay('+')">+</button>
+            <button class="green" onclick="appendToDisplay('-')">-</button>
+            
+            <button class="enter" onclick="calculate()">Enter</button>
+            <button class="green" onclick="calculatePercentage()">%</button>
+            <button class="grey" onclick="togglePositiveNegative()">+/-</button>
+            <button class="grey" onclick="appendToDisplay('ans')">ans</button>
+        </div>
+    </div>
+    <center><h4 style="color: #eee7dd; font-weight: lighter;"><span style="font-weight: bold; color: #fea81e;">Note:</span> After clicking 'C' (All Clear), the "ans" value will be set to '0'</h4></center><br><br><br>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,106 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url(bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+hr{
+    border: 2px solid black;
+}
+
+.container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #cad9fe;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.add-task {
+    display:flex ;
+    margin-bottom: 20px;
+}
+
+.add-task input {
+    width: 90%;
+    padding: 10px;
+    font-size: 16px;
+    margin-right: 25px;
+    border-radius: 7px;
+}
+
+.add-task button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.add-task button:hover{
+    font-size: large;
+    color: #ffffff;
+    background-color: #00d9ff;
+    transition: 0.27s;
+}
+
+.tasks {
+    margin-top: 20px;
+}
+
+.tasks h2 {
+    margin-bottom: 10px;
+}
+
+.tasks ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.tasks li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.tasks li:last-child {
+    border-bottom: none;
+}
+
+.tasks li button {
+    padding: 5px 10px;
+    font-size: 14px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.tasks li button:hover{
+    color: #ffffff;
+    background-color: #00d9ff;
+    transition: 0.27s;
+}
+
+.completed {
+    text-decoration: line-through;
+    color: #777;
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

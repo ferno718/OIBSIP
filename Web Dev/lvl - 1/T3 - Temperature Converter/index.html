@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Temperature Converter</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+    <div class="container">
+        <hr><h2 for="temperature">Enter degree:</h2>
+        <input type="text" id="temperature" placeholder="Temperature" required><br><br><hr>
+        <h2 for="unit">Unit type:</h2>
+        <select id="unit">
+            <option value="celsius">Celsius</option>
+            <option value="fahrenheit">Fahrenheit</option>
+            <option value="kelvin">Kelvin</option>
+        </select><br><br><hr><br>
+        <button onclick="convertTemperature()">Convert</button><br>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function convertTemperature() {
+            const temperatureInput = document.getElementById('temperature').value;
+            const unit = document.getElementById('unit').value;
+
+            if (unit === 'celsius') {
+                const fahrenheit = (temperatureInput * 9/5) + 32;
+                const kelvin = parseFloat(temperatureInput) + 273.15;
+                document.getElementById('result').innerHTML = `<hr>Fahrenheit: ${fahrenheit.toFixed(2)}°F<br><hr><hr>Kelvin: ${kelvin.toFixed(2)}K<hr>`;
+            } else if (unit === 'fahrenheit') {
+                const celsius = (temperatureInput - 32) * 5/9;
+                const kelvin = (parseFloat(temperatureInput) + 459.67) * 5/9;
+                document.getElementById('result').innerHTML = `Celsius: ${celsius.toFixed(2)}°C<br><br>Kelvin: ${kelvin.toFixed(2)}K`;
+            } else if (unit === 'kelvin') {
+                const celsius = parseFloat(temperatureInput) - 273.15;
+                const fahrenheit = (parseFloat(temperatureInput) * 9/5) - 459.67;
+                document.getElementById('result').innerHTML = `Celsius: ${celsius.toFixed(2)}°C<br><br>Fahrenheit: ${fahrenheit.toFixed(2)}°F`;
+            }
+        }
+    </script>
+    </body>
+</html>
